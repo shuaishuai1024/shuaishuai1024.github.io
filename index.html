@@ -299,19 +299,19 @@
 
 
   
-    <article id="post-Spring容器启动流程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-String" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/24/spring-rong-qi-qi-dong-liu-cheng/">Java中的String</a>
+      <a class="article-title" href="/2018/11/24/string/">Java中的String</a>
     </h1>
   
 
         
-        <a href="/2018/11/24/spring-rong-qi-qi-dong-liu-cheng/" class="archive-article-date">
+        <a href="/2018/11/24/string/" class="archive-article-date">
   	<time datetime="2018-11-24T05:59:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-24</time>
 </a>
         
@@ -456,7 +456,7 @@ System.out.println(oInt&nbsp;instanceof&nbsp;String);&nbsp;//&nbsp;返回&nbsp;f
 <pre><code>String s1 = "java";
 String s2 = "java";</code></pre>
 <p>只有字符串是不可变时，我们才能实现字符串常量池，字符串常量池可以为我们缓存字符串，提高程序的运行效率，如下图所示:  </p>
-<p><img src="imgs%5CfinalStr.png"></p>
+<p><img src="/tree/master/imgs/finalStr.png"></p>
 <p>试想一下如果String是可变的，那当s1的值修改之后，s2的值也跟着改变了，这样就和我们预期的结果不相符了，因此也就没有办法实现字符串常量池的功能了。</p>
 <h6 id="7-String和StringBuffer、StringBuilder的区别"><a href="#7-String和StringBuffer、StringBuilder的区别" class="headerlink" title="7.  String和StringBuffer、StringBuilder的区别"></a>7.  String和StringBuffer、StringBuilder的区别</h6><p>因为String类型是不可变的，所以在字符串拼接的时候如果我们使用的String的话性能会很低，因此我们就需要使用另一个数据类型StringBuffer，他提供了append和insert方法可以用于字符串的拼接，它使用synchronized来保证线程安全，如下源码所示:</p>
 <pre><code>@Override
@@ -478,7 +478,7 @@ String&nbsp;s2&nbsp;=&nbsp;s1.intern();
 String&nbsp;s3&nbsp;=&nbsp;"Java";
 System.out.println(s1&nbsp;==&nbsp;s2);&nbsp;//&nbsp;false
 System.out.println(s2&nbsp;==&nbsp;s3);&nbsp;//&nbsp;true</code></pre>
-<p>它们在JVM存储的位置，如下图所示：<br><img src="imgs%5CjvmStr.png">  </p>
+<p>它们在JVM存储的位置，如下图所示：<br><img src="/tree/master/imgs/jvmStr.png">  </p>
 <blockquote>
 <p>JDK1.7之后把永生代换成了元空间，把字符串常量池从方法区移到了Java堆上</p>
 </blockquote>
@@ -552,7 +552,7 @@ public&nbsp;class&nbsp;com.lagou.interview.StringExample&nbsp;{
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/24/spring-rong-qi-qi-dong-liu-cheng/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/11/24/string/">展开全文 >></a>
         </p>
       
 
