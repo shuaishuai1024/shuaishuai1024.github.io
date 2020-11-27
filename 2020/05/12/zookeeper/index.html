@@ -6,15 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Category: Java | Ball</title>
+  <title>ZooKeeper | Ball</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Ball">
-<meta property="og:url" content="http://example.com/categories/Java/index.html">
+  <meta name="description" content="ZooKeeper汇总">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ZooKeeper">
+<meta property="og:url" content="http://example.com/2020/05/12/zookeeper/index.html">
 <meta property="og:site_name" content="Ball">
+<meta property="og:description" content="ZooKeeper汇总">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/img/zk01.png">
+<meta property="og:image" content="http://example.com/img/zk02.png">
+<meta property="og:image" content="http://example.com/img/zk03.png">
+<meta property="og:image" content="http://example.com/img/zk04.png">
+<meta property="og:image" content="http://example.com/img/zk05.jpg">
+<meta property="og:image" content="http://example.com/img/zk03.png">
+<meta property="article:published_time" content="2020-05-12T14:11:00.000Z">
+<meta property="article:modified_time" content="2020-11-27T10:15:53.653Z">
 <meta property="article:author" content="Pony Zhang">
+<meta property="article:tag" content="ZooKeeper">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/zk01.png">
   
     <link rel="alternative" href="/atom.xml" title="Ball" type="application/atom+xml">
   
@@ -152,89 +164,186 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ZooKeeper" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/10/synchronized-use/" class="archive-article-date">
-  	<time datetime="2020-11-10T03:25:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/10/synchronized-use/">Synchronized 的8种用法</a>
+    <h1 class="article-title" itemprop="name">
+      ZooKeeper
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Synchronized</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">并发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/12/zookeeper/" class="archive-article-date">
+        
+        <a href="/2020/05/12/zookeeper/" class="archive-article-date">
   	<time datetime="2020-05-12T14:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-12</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/12/zookeeper/">ZooKeeper</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="ZooKeeper汇总"><a href="#ZooKeeper汇总" class="headerlink" title="ZooKeeper汇总"></a>ZooKeeper汇总</h4><a id="more"></a>  
+<h5 id="1-ZooKeeper是什么？"><a href="#1-ZooKeeper是什么？" class="headerlink" title="1.ZooKeeper是什么？"></a>1.ZooKeeper是什么？</h5><p>ZooKeeper是一个分布式的，开放源码的分布式应用程序协调服务，是Google的Chubby一个开源的实现，是Hadoop和Hbase的重要组件。它是一个伪分布式应用提供一致性服务的软件，提供的功能包括：配置维护、域名服务、分布式同步、组服务等。  </p>
+<p><strong>ZooKeeper的目标就是封装好复杂易出错的关键服务，将简单易用的接口和性能高效、功能稳定的系统提供给用户。</strong>  </p>
+<p>ZooKeeper为我们提供了高可用、高性能、稳定的分布式数据一致性解决方案，通常被用于实现诸如数据发布/订阅、负载均衡、命名服务、分布式协调/通知、集群管理、Master选举、分布式锁和分布式队列等功能。  </p>
+<p>另外，ZooKeeper将数据保存在内存中，性能是非常棒的。在“读”多于“写”的 应用程序中尤其地高性能，因为“写”会导致所有的服务器间同步状态。(“读”多于”写”是协调服务的典型场景)。  </p>
+<h5 id="2-ZooKeeper特点有哪些？"><a href="#2-ZooKeeper特点有哪些？" class="headerlink" title="2. ZooKeeper特点有哪些？"></a>2. ZooKeeper特点有哪些？</h5><ul>
+<li>顺序一致性： 从同一客户端发起的事务请求，最终会严格的按照顺序被应用到ZooKeeper中去。  </li>
+<li>原子性： 所有事物请求的处理结果在整个集群中所有机器上的应用情况是一致的，也就是说，要么整个集群中所有的机器都成功应用了某一个事物，要么都没有应用。  </li>
+<li>单一系统映像： 无论客户端连到哪一个ZooKeeper服务器上，其看到的服务端数据模型都是一致的。  </li>
+<li>可靠性： 一旦一次更改请求被应用，更改的结果就会被持久化，知道被下一次更改覆盖。  </li>
+</ul>
+<h5 id="3-ZooKeeper典型应用场景有哪些？"><a href="#3-ZooKeeper典型应用场景有哪些？" class="headerlink" title="3. ZooKeeper典型应用场景有哪些？"></a>3. ZooKeeper典型应用场景有哪些？</h5><p>ZooKeeper概览中，我们介绍到使用其通常被应用于实现诸如数据发布/订阅、负载均衡、命名服务、分布式协调/通知、集群管理、Master选举、分布式锁和分布式队列等功能。  </p>
+<p>下面选3个典型的应用场景来专门说：<br> 1.<strong>分布式锁：</strong> 通过创建唯一节点获得分布式锁，当获得锁的一方执行完相关代码或者是挂掉之后就释放锁。<br> 2.<strong>命名服务：</strong> 可以通过ZooKeeper的顺序节点生成全局唯一ID。<br> 3.<strong>数据发布/订阅:</strong> 通过<strong>Watcher机制</strong>可以很方便地实现数据发布/订阅。当你将数据发布到ZooKeeper被监听的节点上，其他机器可通过监听ZooKeeper上节点的变化来实现配置的动态更新。  </p>
+<p>实际上，这些功能的实现基本都得益于ZooKeeper可以保存数据的功能，但是ZooKeeper不适合保存大量数据，这一点需要注意。  </p>
+<h6 id="4-有哪些著名的开源项目用到了ZooKeeper？"><a href="#4-有哪些著名的开源项目用到了ZooKeeper？" class="headerlink" title="4. 有哪些著名的开源项目用到了ZooKeeper？"></a>4. 有哪些著名的开源项目用到了ZooKeeper？</h6><p>1.<strong>Kafka:</strong> ZooKeeper主要为Kafka提供Broker和Topic的注册以及多个Partition的负载均衡等功能。<br>2.<strong>Hbase：</strong> ZooKeeper为Hbase提供确保整个集群只有一个Master以及保存和提供regionserver状态信息(是否在线)等功能。<br>3.<strong>Hadoop:</strong> ZooKeeper为Namenode提供高可用支持。  </p>
+<h5 id="5-ZooKeeper-Data-model（数据模型）？"><a href="#5-ZooKeeper-Data-model（数据模型）？" class="headerlink" title="5. ZooKeeper Data model（数据模型）？"></a>5. ZooKeeper Data model（数据模型）？</h5><p>ZooKeeper数据模型采用层次化的多叉树形结构，每个节点上都可以存储数据，这些数据可以是数字、字符串或者是二进制序列。并且，每个节点还可以拥有N个子节点，最上层是根节点以“/”来代表。每个数据节点在ZooKeeper中被称为znode，它是ZooKeeper中数据的最小单元。并且，每个znode都是一个唯一的路径标识。  </p>
+<p>强调一句：<strong>ZooKeeper主要是用来协调服务的，而不是用来存储业务数据的，所以不要放比较大的数据在znode上，ZooKeeper给出的上限是每个节点的数据大小最大是1M。</strong>  </p>
+<p>从下图可以更直观地看出：ZooKeeper节点路径标识方式和Unix文件系统路径非常相似，都是由一系列使用斜杠”/“进行分割的路径表示，开发人员可以向这个节点汇总写入数据，也可以在节点下面创建子节点。<br><img src="/img/zk01.png">  </p>
+<h5 id="6-ZooKeeper-znode-4种类型是什么？"><a href="#6-ZooKeeper-znode-4种类型是什么？" class="headerlink" title="6. ZooKeeper znode 4种类型是什么？"></a>6. ZooKeeper znode 4种类型是什么？</h5><p>我们通常是将znode分为4大类：  </p>
+<ul>
+<li><strong>持久（PERSISTENT）节点：</strong> 一旦创建就一直存在即使ZooKeeper集群宕机，直到将其删除。  </li>
+<li><strong>临时（EPHEMERAL）节点：</strong> 临时节点的生命周期是与<strong>客户端会话(session)**绑定的，</strong>会话消失则节点消失<strong>。并且，</strong>临时节点只能做叶子节点**，不能创建子节点。  </li>
+<li><strong>持久顺序（PERSISTENT_SEQUENTIAL）节点：</strong>  除了具有持久（PERSISTENT）节点的特性之外，子节点的名称还具有顺序性。比如’/node1/app0000000001’、’/node1/app0000000002’。  </li>
+<li><strong>临时顺序（EPHEMERAL_SEQUENTIAL）节点:</strong> 除了具备临时（EPHEMERAL）节点的特性之外，子节点的名称还具有顺序性。  </li>
+</ul>
+<h6 id="7-ZooKeeper-znode数据结构？"><a href="#7-ZooKeeper-znode数据结构？" class="headerlink" title="7. ZooKeeper znode数据结构？"></a>7. ZooKeeper znode数据结构？</h6><p>每个znode由2部分组成：  </p>
+<ul>
+<li><strong>stat:</strong> 状态信息</li>
+<li><strong>data:</strong> 节点存放的数据的具体内容<br>如下所示，我通过get命令来获取根目录下的dubbo节点的内容。  <pre><code>[zk: 127.0.0.1:2181(CONNECTED) 6] get /dubbo# 该数据节点关联的数据内容为空null# 下面是该数据节点的一些状态信息，其实就是 Stat 对象的格式化输出cZxid = 0x2ctime = Tue Nov 27 11:05:34 CST 2018mZxid = 0x2mtime = Tue Nov 27 11:05:34 CST 2018pZxid = 0x3cversion = 1dataVersion = 0aclVersion = 0ephemeralOwner = 0x0dataLength = 0numChildren = 1Copy to clipboardErrorCopied</code></pre>
+Stat类中包含了一个数据节点的所有状态信息的字段，包括十五ID-cZxid、节点创建时间-ctime和子节点个数-numChildren等等。  </li>
+</ul>
+<p>下面我们来看一下每个znode状态系信息酒精代表的是什么吧！(下面的内容来源于《从Paxos到ZooKeeper分布式一致性原理与实践》):  </p>
+<table>
+<thead>
+<tr>
+<th>znode状态信息</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cZxid</td>
+<td>create ZXID,即该数据节点被创建时的事务id</td>
+</tr>
+<tr>
+<td>ctime</td>
+<td>create time，即该节点的创建时间</td>
+</tr>
+<tr>
+<td>mZXID</td>
+<td>modified ZXID，即该节点最终一次更新时的事务id</td>
+</tr>
+<tr>
+<td>mtime</td>
+<td>modified time，即该节点最后一次的更新时间</td>
+</tr>
+<tr>
+<td>pZxid</td>
+<td>该节点的子节点列表最后一次修改时的事务 id，只有子节点列表变更才会更新 pZxid，子节点内容变更不会更新</td>
+</tr>
+<tr>
+<td>cversion</td>
+<td>子节点版本号，当前节点的子节点每次变化时值增加 1</td>
+</tr>
+<tr>
+<td>dataVersion</td>
+<td>数据节点内容版本号，节点创建时为 0，每更新一次节点内容(不管内容有无变化)该版本号的值增加 1</td>
+</tr>
+<tr>
+<td>aclVersion</td>
+<td>节点的 ACL 版本号，表示该节点 ACL 信息变更次数</td>
+</tr>
+<tr>
+<td>ephemeralOwner</td>
+<td>创建该临时节点的会话的 sessionId；如果当前节点为持久节点，则 ephemeralOwner=0</td>
+</tr>
+<tr>
+<td>dataLength</td>
+<td>数据节点内容长度</td>
+</tr>
+<tr>
+<td>numChildren</td>
+<td>当前节点的子节点个数</td>
+</tr>
+</tbody></table>
+<h5 id="8-ZooKeeper-Watcher-事件监听器-？"><a href="#8-ZooKeeper-Watcher-事件监听器-？" class="headerlink" title="8. ZooKeeper Watcher(事件监听器) ？"></a>8. ZooKeeper Watcher(事件监听器) ？</h5><p>Watcher（事件监听器），是ZooKeeper中的一个很重要的特性。ZooKeeper允许用户在指点节点上注册一些Watcher，并且在一些特定事件触发的时候，ZooKeeper服务端会将事件通知到感兴趣的客户端上去，该机制是ZooKeeper实现分布式协调服务的重要特性。<br><img src="/img/zk02.png"><br>Watcher机制官方声明：一个Watcher事件是一个一次性的触发器，当被设置了Watcher的数据发生了改变的时候，则服务器将这个改变发送给设置了Watcher的客户端，以便通知它们。  </p>
+<p>ZooKeeper Watcher机制的特点：</p>
+<ol>
+<li>一次性触发数据发生改变时，一个watcher event会被发送到client，但是client只会收到一次这样的信息。  </li>
+<li>watcher event异步发送watcher的通知事件从server发送到client是异步的，这就存在一个问题，不同的客户端和服务器之间通过socket进行通信，由于网络延迟或其他因素导致客户端在不通的时刻监听到事件，由于ZooKeeper本身提供了ordering guarantee，即客户端监听事件后，才会感知它所监视znode发生了变化。所以我们使用ZooKeeper不能期望能够监控到节点的每次变化。ZooKeeper只能保证最终的一致性，而无法保证强一致性。  </li>
+<li>数据监视ZooKeeper有数据监视和子数据监视getdata() and exists()设置数据监视，getchildren()设置了子节点监视。  </li>
+<li>注册watcher getData、exists、 getChildren  </li>
+<li>触发watcher create、delete、 setData  </li>
+<li>setData()会触发znode上设置的data watch(如果set成功的话)。一个成功的create()操作会触发被创建的znode上的数据watch，以及其父节点上的child watch。而一个成功的delete()操作将会同时触发一个znode的data watch 和child watch(因为这样就没有子节点了)，同时也会触发其父节点的child watch。  </li>
+<li>当一个客户端连接到一个新的服务器上时，watch将会被以任意会话事件触发。当与一个服务器失去连接的时候，是无法接收到watch的。而当client重新连接时，如果需要的话，所有先前注册过的watch，都会被重新注册。通常这是完全透明的。只有在一个特殊情况下，watch可能会丢失：对于一个未创建的znode的exist watch，如果在客户端断开连接期间被创建了，并且随后在客户端连接上之前有删除了，这种情况下，这个watch事件可能会被丢失。  </li>
+<li>Watch是轻量级的，其实就是本地JVM的Callback，服务器端只是存了是否有设置了Watch的布尔类型。  </li>
+</ol>
+<h5 id="9-ZooKeeper集群？"><a href="#9-ZooKeeper集群？" class="headerlink" title="9. ZooKeeper集群？"></a>9. ZooKeeper集群？</h5><p>为了保证高可用，最好是以集群形态来部署ZooKeeper，这样只要集群中大部分机器是可用的(能够容忍一定的机器故障)，那么ZooKeeper本身仍然是可用的。通常3台服务器就可以构成一个ZooKeeper集群了。ZooKeeper官方提供的架构图就是一个ZooKeeper集群整体对外提供服务。<br><img src="/img/zk03.png"><br>上图中每一个server代表一个安装ZooKeeper服务的服务器。组成ZooKeeper服务的服务器都会在内存中维护当前的服务器状态，并且每台服务器之间否互相保持着通信。集群间通过ZAB协议(ZooKeeper Atomic Broadcast)来保持数据的一致性。  </p>
+<p>**最典型集群模式：Master/Slave模式(主备模式)**。在这种模式中，通常Master服务器作为主服务器提供写服务，其他的Slave服务器从服务器通过异步复制的方式获取Master服务器最新的数据提供读服务。  </p>
+<h5 id="10-ZooKeeper集群角色？"><a href="#10-ZooKeeper集群角色？" class="headerlink" title="10. ZooKeeper集群角色？"></a>10. ZooKeeper集群角色？</h5><p>但是，在ZooKeeper中没有选择传统的Master/Slave概念，而是引入了Leader、Follower和Observer三种角色。如下图所示：<br><img src="/img/zk04.png"><br>ZooKeeper集群中的所有机器通过一个<strong>Leader选举过程</strong>来选定一台成为“<strong>Leader</strong>”的机器，Leader既可以为客户端提供写服务又能提供读服务。除了Leader以外，<strong>Follower</strong>和“<strong>Observer</strong>”都只能提供读服务。Follower和Observer唯一的区别在于Observer机器不参与Leader的选举过程，也不参与写操作的”过半写成功”策略，因此Observer机器可以在不影响写性能的情况下提升集群的读性能。  </p>
+<table>
+<thead>
+<tr>
+<th>角色</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Leader</td>
+<td>微客户端提供读和写的服务，负责投票的发起和决议，更新系统状态</td>
+</tr>
+<tr>
+<td>Follower</td>
+<td>为客户端提供读服务，如果是写服务则转发给Leader。在选举过程中参与投票</td>
+</tr>
+<tr>
+<td>Observer</td>
+<td>为客户端提供读服务，如果是写服务则转发给Leader。不参与选举过程中的投票。也不参与“过半写成功”策略。在不影响写性能的情况下提升集群的读性能。此角色于ZooKeeper3.3系列新增的角色。</td>
+</tr>
+</tbody></table>
+<p>当Leader服务器出现网络中断、崩溃退出与重启等异常情况时，就会进入Leader选举过程，这个过程会选举产生新的Leader的服务器。<br>这个过程大致是这样的：  </p>
+<ol>
+<li><strong>Leader election（选举阶段）</strong>: 节点在一开始都处于选举阶段，只要有一个节点得到超半数节点的票数，它就可以当选准Leader。  </li>
+<li><strong>Discovery（发现阶段）</strong>： 在这个阶段，followers跟准Leader进行通信，同步followers最近接受的事务提议。  </li>
+<li><strong>Synchronization（同步阶段）</strong>： 同步阶段主要是利用leader前一阶段获得的最新提议历史，同步集群中所有的副本。同步完成之后准leader才会成为真正的leader。  </li>
+<li><strong>Broadcast（广播阶段）</strong>: 到了这个阶段，ZooKeeper集群才能正式对外提供事务服务，并且leader可以进行消息广播。同时如果有新的节点加入，还需要对新节点进行同步。  </li>
+</ol>
+<h5 id="11-ZooKeeper集群为啥最好是奇数台？"><a href="#11-ZooKeeper集群为啥最好是奇数台？" class="headerlink" title="11.ZooKeeper集群为啥最好是奇数台？"></a>11.ZooKeeper集群为啥最好是奇数台？</h5><p>ZooKeeper集群在宕掉几个ZooKeeper服务器之后，如果剩下的ZooKeeper服务器个数大于宕掉的个数的话整个ZooKeeper才依然可用。加入我们的集群中有N台ZooKeeper服务器，那么也就是剩下的服务数必须大于N/2.先说一下结论，2N和2N-1的容忍度是一样的，都是N-1大家可以先自己仔细想一想，这应该是一个很简单的数学问题了。比如假如我们有3台，那么最大允许宕掉1台ZooKeeper服务器，如果我们有4台的时候也同样只允许宕掉一台。加入我们有5台，那么我们最大允许宕掉2台ZooKeeper服务器，如果我们有6台的时候同样只允许宕掉2台。  </p>
+<p>综上，何必增加那一个不必要的ZooKeeper呢？  </p>
+<h5 id="12-ZooKeeper如何选举master节点？"><a href="#12-ZooKeeper如何选举master节点？" class="headerlink" title="12. ZooKeeper如何选举master节点？"></a>12. ZooKeeper如何选举master节点？</h5><p>还记得上面我们所说的临时节点么？ 因为’ZooKeeper’的强一致性，能够很好地在保证<strong>在高并发的情况下保证节点创建的全局唯一性</strong>(即无法重复创建同样的节点)。  </p>
+<p>利用这个特性，我们可以<strong>让多个客户端创建一个指定的节点</strong>，创建成功的就是<code>master</code>。<br>但是如果这个<code>master</code>挂了怎么办？？？<br>想想我们为什么要创建临时节点？还记得临时节点的生命周期么？<code>master</code>挂了是不是代表会话断了？会话断了是不是意味着这个节点就没有了？还记得<code>watcher</code>吗？我们是不是可以<strong>让其他不是<code>master</code>的节点监听节点的状态</strong>，比如说我们监听这个临时节点的父节点，如果子节点个数变了就代表<code>master</code>挂了，这个时候我们<strong>触发回调函数进行重新选举</strong>，或者我们直接监听节点的状态，我们可以通过节点是否已经失去连接来判断<code>master</code>是否挂了等等。<br><img src="/img/zk05.jpg"><br>总的来说，我们可以完全<strong>利用临时节点、节点状态和watcher来实现选主的功能</strong>，临时节点主要用来选举，节点状态和<code>watcher</code>可以用来判断<code>master</code>的活性和进行重新选举。  </p>
+<h5 id="13-ZooKeeper如何实现分布式锁？"><a href="#13-ZooKeeper如何实现分布式锁？" class="headerlink" title="13. ZooKeeper如何实现分布式锁？"></a>13. ZooKeeper如何实现分布式锁？</h5><p>分布式多的实现方式油和多种，比如<code>Redis</code>、数据库、<code>ZooKeeper</code>等。个人认为<code>ZooKeeper</code>在实现分布式锁这方面是非常非常简单的。  </p>
+<p>上面我们已经提过了<strong>zk在高并发的情况下保证节点创建的全局唯一性</strong>，这玩意一看就知道能干啥了。实现互斥锁呗，又因为能在分布式情况下，所以能实现分布式锁。  </p>
+<p>如何实现呢？其实跟选主基本一样，我们也可以利用临时节点的创建来实现。  </p>
+<p>首先肯定是如何获取锁，因为创建节点的唯一性，我们可以让多个客户端同时创建一个临时节点，<strong>创建成功的就说明获取到了锁</strong>。然后没有获取到锁的客户端也像上面选主的非主节点创建一个<code>watcher</code>进行节点状态的监听，如果这个互斥锁被释放了（可能获取锁的客户端宕机了，或者那个客户端主动释放了锁）可以调用回调函数重新获得锁。  </p>
+<blockquote>
+<p><code>zk</code>中不需要像<code>Redis</code>那样考虑锁得不到释放的问题了，因为当客户端挂了，节点也挂了，锁也释放了。  </p>
+</blockquote>
+<p>那能不能<code>zookeeper</code>同时实现共享锁和独占锁呢？答案是可以的，不过稍微有点复杂。  </p>
+<p>还记得有序节点么？  </p>
+<p>这个时候规定所有创建节点必须有序，当你是读请求(要获取共享锁)的话，如果<strong>如果没有比自己更小的节点，或比自己小的节点都是读请求</strong>，则可以获取到读锁，然后就可开始读了。<strong>若比自己小的节点中有请求</strong>，则当前客户端无法获取到读锁，只能等待前面的写请求完成。  </p>
+<p>如果你是写请求(获取独占锁)，若<strong>没有比自己更小的节点</strong>，则表示当前客户端可以直接获取到写锁，对数据进行修改。若发现<strong>有比自己更小的节点，无论是读操作还是写操作，当前客户端都无法获取到写锁</strong>，等待所有前面的操作完成。  </p>
+<p>这就很好地同时实现了共享锁和独占锁，当然还有优化的地方，比如一个锁得到释放它会通知所有等待的客户端从而造成<strong>羊群效应</strong>。此时你可以通过让等待的节点只监听他们前面的节点。  </p>
+<p>具体怎么做呢？其实也很简单，你可以让<strong>读请求监听比自己小的最后一个写请求节点，写请求只监听比自己晓得最后一个节点</strong>。  </p>
+<h5 id="14-ZooKeeper架构？"><a href="#14-ZooKeeper架构？" class="headerlink" title="14. ZooKeeper架构？"></a>14. ZooKeeper架构？</h5><p>作为一个优秀高效且可靠的分布式协调框架，<code>zookeeper</code>在解决分布式数据一致性问题时并没有直接使用<code>Paxos</code>，而是专门定制了一致性协议叫做<code>ZAB(ZooKeeper Automic Broadcast)</code>原子广播协议，该协议能够很好地支持<code>崩溃恢复</code>。<br><img src="/img/zk03.png">  </p>
+<h5 id="15-ZooKeeper特点总结？"><a href="#15-ZooKeeper特点总结？" class="headerlink" title="15. ZooKeeper特点总结？"></a>15. ZooKeeper特点总结？</h5><ol>
+<li>ZooKeeper本身就是一个分布式程序(只要半数以上节点存活，ZooKeeper就能正常服务)。  </li>
+<li>为了保证高可用，最好是以集群形态来部署ZooKeeper，这样只要集群中大部分机器是可用的(能够容忍一定的机器故障)，那么ZooKeeper本身仍然是可用的。  </li>
+<li>ZooKeeper将数据保存在内存中，这也就保证了高吞吐量和低延迟(但是内存限制了能够存储的容量不太大，此限制也是保持znode中存储的数据量较小的进一步原因)。  </li>
+<li>ZooKeeper是高性能的。在”读“多于”写“的应用程序中尤其的明显，因为”写“会导致所有的服务器间同步状态。(”读“多于”写“是协调服务的典型场景)。  </li>
+<li>ZooKeeper有临时节点的概念。当创建临时节点的客户端会话一直保持活动，瞬时节点就一直存在。而当会话终结时，瞬时节点就被删除。持久节点是指一旦这个znode被创建了，除非主动进行znode的移除操作，否则这个znode将一直保存在ZooKeeper上。  </li>
+<li>ZooKeeper底层其实只提供了两个功能：①管理（存储、读取）用户程序提交的数据；② 为用户程序提供数据节点监听服务。</li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -246,7 +355,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -259,184 +368,113 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/05/12/zookeeper/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
+<nav id="article-nav">
+  
+    <a href="/2020/11/10/synchronized-use/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Synchronized 的8种用法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/12/01/spring01/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/01/spring01/" class="archive-article-date">
-  	<time datetime="2019-12-01T06:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/01/spring01/">Spring</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/25/hashmap/" class="archive-article-date">
-  	<time datetime="2019-11-25T14:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/25/hashmap/">HashMap</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">HashMap</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/11/24/string/" class="archive-article-date">
-  	<time datetime="2018-11-24T05:59:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/24/string/">Java中的String</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">String</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Java//" class="article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -459,10 +497,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
