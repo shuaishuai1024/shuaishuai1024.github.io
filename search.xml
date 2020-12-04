@@ -131,6 +131,31 @@
     
     
     <entry>
+      <title>Redis为什么16个数据库</title>
+      <link href="2019/11/25/redis01/"/>
+      <url>2019/11/25/redis01/</url>
+      
+        <content type="html"><![CDATA[<h4 id="Redis为什么默认16个数据库？"><a href="#Redis为什么默认16个数据库？" class="headerlink" title="Redis为什么默认16个数据库？"></a>Redis为什么默认16个数据库？</h4><a id="more"></a><ul><li>一、 16个数据库的由来  </li><li>二、 正确理解Redis的“数据库”概念  </li><li>三、 集群情况下是否支持一个实例多个db？  </li><li>四、 总结  </li></ul><p>导读：在实际项目中Redis常被用于做缓存，分布式锁、消息队列等。但是在搭建配置好Redis服务器后很多人应该会发现和有这样的一问，为什么Redis默认建立了16个数据库，如下图所示。<br><img src="/img/redis01.jpg">  </p><h2 id="一、-16个数据库的由来"><a href="#一、-16个数据库的由来" class="headerlink" title="一、 16个数据库的由来"></a>一、 16个数据库的由来</h2><p>Redis是一个字典结构的存储服务器，一个Redis实例提供了多个用来存储数据的字典，客户端可以指定将数据存储在哪个字典中。这与在一个关系数据库实例中可以创建多个数据库类似(如下图所示)，所以可以将其中的每个字典都理解成一个独立的数据库。<br><img src="/img/redis02.jpg"><br>  以MySQL实例为例 </p><p>Redis默认支持16个数据库，可以通过调整Redis的配置文件redis/redis.conf中的database来修改这一个值，设置完毕后重启Redis便完成配置。<br><img src="/img/redis03.jpg"><br>客户端与Redis建立连接后会默认选择0号数据库，不过可以随时使用SELECT命令更换数据库。<br><img src="/img/redis04.png"><br>在实际项目中则可以通过Redis配置文件的形式指定数据库，如下图所示<br><img src="/img/redis05.jpg">  </p><h2 id="二、-正确理解Redis的“数据库”概念"><a href="#二、-正确理解Redis的“数据库”概念" class="headerlink" title="二、 正确理解Redis的“数据库”概念"></a>二、 正确理解Redis的“数据库”概念</h2><p>由于Redis不支持自定义数据库的名字，所以每个数据库都以编号命名。开发者则需要自己记录存储的数据与数据库的对应关系。另外Redis也不支持为每个数据库设置不同的访问密码，所以一个客户端要么可以访问全部数据库，要么全部数据库都没有权限访问。但是，要正确地理解Redis的“数据库”概念这里不得不提到一个命令：</p><p><img src="/img/redis06.jpg">  </p><p>该命令可以清空实例下的所有的数据库数据，这与我们所熟知的关系型数据库所不同。关系型数据库多个库常用于存储不同应用程序的数据，且没有方式可以同时清空实例下的所有数据库。所以对于Redis来说这些db更像是一种命名空间，且不适宜存储不同应用程序的数据。比如可以使用0号数据库存储某个应用生产环境中的数据，使用1号数据库存储测试环境中的数据，但不适宜使用0号数据库存储A应用的数据而使用1号数据库存储B应用的数据，不同的应用应该使用不同的Redis实例存储数据。Redis非常轻量级，一个空Redis实例占用的内存只有1M左右，所以不用担心多个Redis实例会额外占用很多内存。  </p><h2 id="三、-集群情况下是否支持一个实例多个db？"><a href="#三、-集群情况下是否支持一个实例多个db？" class="headerlink" title="三、 集群情况下是否支持一个实例多个db？"></a>三、 集群情况下是否支持一个实例多个db？</h2><p><img src="/img/redis07.jpg"><br>要注意以上所说的都是基于单体Redis的情况。而在集群的情况下不支持使用select命令来切换db，因为Redis集群模式下只有一个db0.在扩展一些集群与单机Redis的区别。  </p><ul><li>key批量操作支持有限：例如mget、mset必须在一个slot  </li><li>key事务和Lua支持有限：操作的key必须在一个节点  </li><li>key是数据enquiry的最小粒度：不支持bigkey分区  </li><li>不支持多个数据库：集群模式下只有一个db0  </li><li>复制只支持一层：不支持树形复制结构  </li></ul><h2 id="四、-总结"><a href="#四、-总结" class="headerlink" title="四、 总结"></a>四、 总结</h2><p>Redis实例默认建立了16个db，由于不支持自主进行数据库命名所以以dbx的当时命名。默认数据库数量可以修改配置文件的database值来设定。对于db正确的理解应该为“命名空间”，多个应用程序不应使用同一个Redis不同库，而应一个应用程序对应一个Redis实例，不同的数据库可用于存储不同环境的数据。最后要注意，Redis集群下只有db0，不支持多db。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> redis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java中的String</title>
       <link href="2018/11/24/string/"/>
       <url>2018/11/24/string/</url>
